@@ -1,0 +1,65 @@
+{
+    "xsappname": "myapp",
+    "tenant-mode": "dedicated",
+    "scopes": [
+        {
+            "name": "uaa.user",
+            "description": "UAA"
+        }
+        ,
+        {
+            "name": "$XSAPPNAME.Viewer",
+            "description": "Viewer"
+        },
+        {
+            "name": "$XSAPPNAME.Admin",
+            "description": "Administrator"
+        }
+    ],
+    "attributes": [
+        {
+            "name": "Region",
+            "description": "Region",
+            "valueType": "string"
+        }
+    ],
+    "role-templates": [
+        {
+            "name": "Token_Exchange",
+            "description": "UAA Token Exchange",
+            "scope-references": [
+                "uaa.user"
+            ]
+        }
+        ,
+        {
+            "name": "Viewer",
+            "description": "Viewer",
+            "attribute-references": [
+                {
+                    "name": "Region"
+                }
+            ],
+            "scope-references": [
+                "$XSAPPNAME.Viewer"
+            ]
+        },
+        {
+            "name": "Admin",
+            "description": "Administrator",
+            "scope-references": [
+                "$XSAPPNAME.Admin"
+            ]
+        }
+    ]
+    ,
+    "role-collections": [
+        {
+            "name": "myapp_Administrator",
+            "description": "Administrative access",
+            "role-template-references": [
+                "$XSAPPNAME.Admin"
+            ]
+        }
+    ]
+}
