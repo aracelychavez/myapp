@@ -10,8 +10,7 @@
     "@sap/xsenv": "^3",
     "@sap/xssec": "^3",
     "passport": "^0.4.1",
-
-  "express": "^4"
+    "express": "^4"
   },
   "devDependencies": {
     "sqlite3": "5.0.0"
@@ -31,15 +30,13 @@
           "strategy": "JWT"
         },
         "[development]": {
-          "strategy": "mock"
-          ,
+          "strategy": "mock",
           "users": {
             "joe": {
               "roles": [
                 "Admin",
                 "Viewer"
-              ]
-              ,
+              ],
               "userAttributes": {
                 "Region": [
                   "$UNRESTRICTED"
@@ -49,8 +46,7 @@
             "julie": {
               "roles": [
                 "Viewer"
-              ]
-              ,
+              ],
               "userAttributes": {
                 "Region": [
                   "North America",
@@ -61,8 +57,7 @@
             "bob": {
               "roles": [
                 "Viewer"
-              ]
-              ,
+              ],
               "userAttributes": {
                 "Region": [
                   "Europe"
@@ -79,8 +74,7 @@
         "[development]": {
           "kind": "sql"
         }
-      }
-      ,
+      },
       "API_SALES_ORDER_SRV": {
         "kind": "odata",
         "model": "srv/external/API_SALES_ORDER_SRV",
@@ -94,8 +88,7 @@
           }
         }
       }
-    }
-    ,
+    },
     "hana": {
       "deploy-format": "hdbtable"
     }
